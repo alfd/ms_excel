@@ -68,3 +68,14 @@ ref. : https://msdn.microsoft.com/en-us/VBA/Excel-VBA/articles/object-model-exce
 
 ##### whole range
 > Range(Cells(1, 1), Cells.SpecialCells(xlCellTypeLastCell)).Select
+
+##### mailmerge start auto merge
+> With ActiveDocument.MailMerge
+> &#160;&#160;&#160;&#160;.Destination = wdSendToNewDocument
+> &#160;&#160;&#160;&#160;.SuppressBlankLines = True
+> &#160;&#160;&#160;&#160;With .DataSource
+> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.FirstRecord = 1
+> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.LastRecord = 1
+> &#160;&#160;&#160;&#160;End With
+> &#160;&#160;&#160;&#160;.Execute Pause:=False
+> End With
