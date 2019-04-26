@@ -1,3 +1,4 @@
+
 ### methods
 ref. : https://msdn.microsoft.com/en-us/VBA/Excel-VBA/articles/object-model-excel-vba-reference
 ##### add sheet
@@ -6,14 +7,14 @@ ref. : https://msdn.microsoft.com/en-us/VBA/Excel-VBA/articles/object-model-exce
 ##### autofilter ( http://www.contextures.com/xlautofilter03.html )
 > ThisWorkbook.Sheets(1).AutoFilterMode = False  
 > With Range(Cells(11, "L"), Cells(lst_row, "AL"))  
->     .AutoFilter  
->     .AutoFilter Field:=1, Criteria1:="=*bank*", Operator:=xlOr, Criteria2:="=*city*"  
->     .AutoFilter Field:=25, Criteria1:="<>#N/A"  
+> &#160;&#160;&#160;&#160;.AutoFilter  
+> &#160;&#160;&#160;&#160;.AutoFilter Field:=1, Criteria1:="=*bank*", Operator:=xlOr, Criteria2:="=*city*"  
+> &#160;&#160;&#160;&#160;.AutoFilter Field:=25, Criteria1:="<>#N/A"  
 > End With
  
 ##### 'check for filter, turn on if none exists  
 > If Not ActiveSheet.AutoFilterMode Then  
-> ActiveSheet.Range("A1").AutoFilter  
+> &#160;&#160;&#160;&#160;ActiveSheet.Range("A1").AutoFilter  
 > End If
  
 ##### 'removes AutoFilter if one exists  
@@ -36,18 +37,18 @@ ref. : https://msdn.microsoft.com/en-us/VBA/Excel-VBA/articles/object-model-exce
 
 ##### multi-line messagebox
 > MsgBox " ******first line******" & vbCrLf & _  
-> " ******second line******" _  
-> , vbYesNo
+> &#160;&#160;&#160;&#160;" ******second line******" _  
+> &#160;&#160;&#160;&#160;, vbYesNo
 
 ##### open file by Excel
 > Workbooks.Open Filename:=ThisWorkbook.Path & "\settle.csv"
 
 ##### open webpage by
-> Shell "D:\Programs\FirefoxPortable\FirefoxPortable.exe http://report.gserver.net/WebReport", vbNormalFocus
+> Shell "D:\Programs\FirefoxPortable\FirefoxPortable.exe http://www.web.net/index.html", vbNormalFocus
 
 ##### save book
 > Workbooks.Add
-> ActiveWorkbook.SaveAs Filename:="E:\" & sv_book & ".xlsx"
+> ActiveWorkbook.SaveAs Filename:="E:\" & filename & ".xlsx"
 
 ##### select special cells only
 > Selection.SpecialCells(xlCellTypeVisible).Select
