@@ -50,6 +50,20 @@ ref. : https://msdn.microsoft.com/en-us/VBA/Excel-VBA/articles/object-model-exce
 > Workbooks.Add
 > ActiveWorkbook.SaveAs Filename:="E:\" & filename & ".xlsx"
 
+#### select folder to open files
+> Set Fold = CreateObject("shell.application").BrowseForFolder(0, "Please select folder:", 0, 0) 'from desktop
+> If Fold Is Nothing Then Exit Sub 'exit while no selection
+> filepath = Fold.Items.Item.Path & "\" 'set data path
+
+#### select file to open
+> FileToOpen = Application.GetOpenFilename (Title:="Please choose a file to open", FileFilter:="Excel Files *.xls* (*.xls*),")
+> If FileToOpen = False Then
+>     MsgBox "No file selected.", vbExclamation, "Sorry!"
+>     Exit Sub
+> Else
+>     Workbooks.Open Filename:=FileToOpen
+> End If
+
 ##### select special cells only
 > Selection.SpecialCells(xlCellTypeVisible).Select
 > Selection.SpecialCells(xlCellTypeBlanks).Select
