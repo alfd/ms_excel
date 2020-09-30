@@ -6,6 +6,9 @@
 > data_max = WorksheetFunction.Max(a, b, c, d)
 > data_min = WorksheetFunction.Min(a, b, c, d)
 
+#### rank -continues
+> {=SUM(IF(A$1:A$17>=A1,1/COUNTIF(A$1:A$17,A$1:A$17),""))}
+
 ##### round to even integer
 > =IF((A1*10-INT(A1)*10)<=4,INT(A1),IF((A1*10-INT(A1)*10)>=6,INT(A1)+1,INT((INT(A1)+1)/2)*2))
 
