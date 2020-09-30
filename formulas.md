@@ -14,3 +14,4 @@
 
 ##### show financial Chinese of number in cell A1
 > =TEXT(INT(RC[-1]),"[DBNum2]")&"元"&IFERROR(IF(MID(RC[-1],FIND(".",RC[-1])+1,1)*1,TEXT(MID(RC[-1],FIND(".",RC[-1])+1,1),"[DBNum2]")&"角","零"),"")&IF(RIGHT(TEXT(RC[-1],"0.00"),1)*1,TEXT(RIGHT(RC[-1],1),"[DBNum2]")&"分","整")
+> =TEXT(INT(A1),"[DBNum2]")&"元"&IFERROR(IF(MID(A1,FIND(".",A1)+1,1)*1,TEXT(MID(A1,FIND(".",A1)+1,1),"[DBNum2]")&"角","零"),"")&IF(RIGHT(TEXT(A1,"0.00"),1)*1,TEXT(RIGHT(A1,1),"[DBNum2]")&"分","整")
