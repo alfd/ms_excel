@@ -1,3 +1,6 @@
+#### calendar
+> =IF(MONTH(DATE(YEAR(A1),MONTH(A1),1))<>MONTH(DATE(YEAR(A1),MONTH(A1),1)-WEEKDAY(DATE(YEAR(A1),MONTH(A1),1),2)+{1,2,3,4,5,6,7}+{0;1;2;3;4;5}*7),"",DATE(YEAR(A1),MONTH(A1),1)-WEEKDAY(DATE(YEAR(A1),MONTH(A1),1),2)+{1,2,3,4,5,6,7}+{0;1;2;3;4;5}*7)
+
 ##### format setting in MailMerge field (insert before })
 > \\@ YYYY-M-DD
 > \\#,##0.00
