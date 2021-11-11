@@ -93,3 +93,17 @@ ref. : https://msdn.microsoft.com/en-us/VBA/Excel-VBA/articles/object-model-exce
 > &#160;&#160;&#160;&#160;End With
 > &#160;&#160;&#160;&#160;.Execute Pause:=False
 > End With
+
+##### icident
+put ThisWorkbook.Close under Private Sub Workbook_Open() in ThisWorkbook - Workbook by mistake
+
+solution:
+in a temp file run VBA code
+Application.EnableEvents = False
+
+will stop VBA run
+
+then use below code to restore
+Application.EnableEvents = True
+
+ref. http://cn.voidcc.com/question/p-bmkwvtpf-mw.html
