@@ -24,3 +24,4 @@
 > =TEXT(INT(A1),"[DBNum2]")&"元"&IFERROR(IF(MID(A1,FIND(".",A1)+1,1)*1,TEXT(MID(A1,FIND(".",A1)+1,1),"[DBNum2]")&"角","零"),"")&IF(RIGHT(TEXT(A1,"0.00"),1)*1,TEXT(RIGHT(A1,1),"[DBNum2]")&"分","整")
 
 #### Rounding
+> =ROUND(A1,1)-(RIGHT(INT(A1*100),1)*1=5)*NOT(MOD(RIGHT(INT(A1*10),1),2))/10
